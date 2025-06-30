@@ -53,7 +53,7 @@ export function CreateGroupModal({ isOpen, onClose, onSuccess } : CreateGroupMod
   const [commandOpen, setCommandOpen] = useState(false);
 
   const query_res = useDBQuery(api.users.getCurrentUser);
-  const currentUser : Doc<"users"> = query_res.data;
+  const currentUser : any = query_res.data;
   const createGroup = useDBMutation(api.contacts.createGroup);
   const search_res = useDBQuery(api.users.searchUsers, { query: searchQuery });
   const isSearching = search_res.isLoading;

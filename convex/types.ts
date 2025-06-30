@@ -45,10 +45,58 @@ type GroupExpenseData = {
 
 // create a type Contact , that can be either a user or a group
 
-type ContactData = {
-    users : Doc<"users">[];
-    groups : Doc<"groups">[];
+type UserContact = {
+    _id: Id<"users">;
+    name: string;
+    email: string;
+    imageUrl?: string;
+    type: "user";
 }
+
+type GroupContact = {
+    _id: Id<"groups">;
+    name: string;
+    description?: string;
+    memberCount: number;
+    type: "group";
+}
+
+type ContactData = {
+    users : UserContact[] ;
+    groups : GroupContact[];
+}
+
+// DASHBOARD TYPES
+
+type OweDetail = {
+    userId: string;
+    name: string;
+    imageUrl?: string;
+    amount: number;
+};
+
+export type Balances = {
+  totalBalance: number;
+  youAreOwed: number;
+  youOwe: number;
+  oweDetails: {
+    youAreOwedBy: OweDetail[];
+    youOwe: OweDetail[];
+  };
+};
+
+export type EnhancedGroup = {
+  id: string;
+  name: string;
+  members: Doc<"users">[];
+  balance?: number; // Optional balance for the group
+};
+
+export type MonthlySpending = {
+  month: string; // ISO date string
+  total: number;
+};
+
 
 // export above created types
 export type { GroupMember, GroupData, ExpenseData, GroupExpenseData, ContactData};

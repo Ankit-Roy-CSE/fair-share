@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Plus, Users, User } from "lucide-react";
-import { CreateGroupModal } from "./components/create-group-modal";
+import { CreateGroupModal } from "./_components/create-group-modal";
 import { ContactData } from "@/types";
 
 export default function ContactsPage() {
@@ -126,7 +126,7 @@ export default function ContactsPage() {
                           <div>
                             <p className="font-medium">{group.name}</p>
                             <p className="text-sm text-muted-foreground">
-                              {group.members.length} members
+                              {group.memberCount} members
                             </p>
                           </div>
                         </div>
