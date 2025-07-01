@@ -92,11 +92,49 @@ export type EnhancedGroup = {
   balance?: number; // Optional balance for the group
 };
 
+export type EnhancedGroupMember = {
+  id: Id<"users">;
+  name: string;
+  imageUrl: string;
+  role: "admin" | "member";
+}
+
+export type EnhancedBalance = {
+    totalBalance: number;
+    owes: {
+        to: string;
+        amount: number;
+    }[];
+    owedBy: {
+        from: string;
+        amount: number;
+    }[];
+    id: Id<"users">;
+    name: string;
+    imageUrl: string;
+    role: string;
+}
+
 export type MonthlySpending = {
   month: string; // ISO date string
   total: number;
 };
 
+// GROUP Page types
+export type GroupInfo = {
+    id: Id<"groups">;
+    name: string;
+    description: string | undefined;
+}
+
+export type GroupExpenseInfo = {
+    group: GroupInfo;
+    members: EnhancedGroupMember[];
+    expenses: Doc<"expenses">[];
+    settlements: Doc<"settlements">[];
+    balances: EnhancedBalance[];
+    userLookupMap: Record<Id<"users">, EnhancedGroupMember>;
+}
 
 // export above created types
 export type { GroupMember, GroupData, ExpenseData, GroupExpenseData, ContactData};
