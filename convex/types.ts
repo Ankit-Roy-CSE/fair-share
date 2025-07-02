@@ -13,7 +13,17 @@ type GroupData = {
         members: GroupMember[];
     };
 
-type Split = {
+export type RawSplit = {
+    userId: Id<"users">;
+    name: string;
+    email: string;
+    imageUrl?: string;
+    amount: number;
+    percentage: number;
+    paid: boolean; // Indicates if the user has paid their share
+}
+
+export type Split = {
     userId: Id<"users">;
     amount: number;
     paid: boolean;
@@ -96,7 +106,7 @@ export type EnhancedGroupMember = {
   id: Id<"users">;
   name: string;
   imageUrl: string;
-  role: "admin" | "member";
+  role?: "admin" | "member";
 }
 
 export type EnhancedBalance = {
@@ -134,6 +144,35 @@ export type GroupExpenseInfo = {
     settlements: Doc<"settlements">[];
     balances: EnhancedBalance[];
     userLookupMap: Record<Id<"users">, EnhancedGroupMember>;
+}
+
+export type ShortUser = {
+    id: Id<"users">;
+    name: string;
+    imageUrl: string;
+    email: string;
+    role?: "admin" | "member";
+}
+
+export type SelectedGroup = {
+    id: Id<"groups">;
+    name: string;
+    description: string | undefined;
+    members: ShortUser[];
+}
+
+export type PersonalExpenseInfo = {
+    expenses: Doc<"expenses">[];
+    settlements: Doc<"settlements">[];
+    otherUser: ShortUser;
+    balance: number;
+}
+
+export type ShortGroup = {
+    id: Id<"groups">;
+    name: string;
+    description: string | undefined;
+    memberCount: number;
 }
 
 // export above created types

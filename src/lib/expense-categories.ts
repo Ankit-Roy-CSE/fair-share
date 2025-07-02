@@ -28,6 +28,7 @@ export interface ExpenseCategory {
     id: string;
     name: string;
     icon: React.ComponentType<any>;
+    isDefault?: boolean; // Optional property to mark a category as default
 }
 
 // Object containing all categories with their respective icons

@@ -11,14 +11,14 @@ import { Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Doc, Id } from "@/_generated/dataModel";
-import { GroupExpenseData } from "@/types";
+import { EnhancedGroupMember } from "@/types";
 
 interface ExpenseListProps {
     expenses: Doc<"expenses">[];
     showOtherPerson?: boolean;
     isGroupExpense?: boolean;
     otherPersonId?: string | null;
-    userLookupMap?: Record<string, { id: string; name: string; imageUrl?: string; role: string }>;
+    userLookupMap?: Record<string, EnhancedGroupMember>;
 }
 
 export function ExpenseList({

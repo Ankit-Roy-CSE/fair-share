@@ -10,7 +10,7 @@ export const getGroupOrMembers = query({
   },
   handler: async (ctx, args) => {
     // Use centralized getCurrentUser function
-    const currentUser = await ctx.runQuery(internal.users.getCurrentUser);
+    const currentUser : Doc<"users"> = await ctx.runQuery(internal.users.getCurrentUser);
 
     // Get all groups where the user is a member
     const allGroups = await ctx.db.query("groups").collect();

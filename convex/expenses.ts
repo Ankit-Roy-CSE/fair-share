@@ -23,7 +23,7 @@ export const createExpense = mutation({
   },
   handler: async (ctx, args) => {
     // Use centralized getCurrentUser function
-    const user = await ctx.runQuery(internal.users.getCurrentUser);
+    const user : Doc<"users"> = await ctx.runQuery(internal.users.getCurrentUser);
 
     // If there's a group, verify the user is a member
     if (args.groupId) {
@@ -73,7 +73,7 @@ export const createExpense = mutation({
 export const getExpensesBetweenUsers = query({
   args: { userId: v.id("users") },
   handler: async (ctx, { userId }) => {
-    const me = await ctx.runQuery(internal.users.getCurrentUser);
+    const me : Doc<"users"> = await ctx.runQuery(internal.users.getCurrentUser);
     if (me._id === userId) throw new Error("Cannot query yourself");
 
     /* ───── 1. One-on-one expenses where either user is the payer ───── */
