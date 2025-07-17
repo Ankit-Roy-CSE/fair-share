@@ -115,7 +115,7 @@ export default function ContactsPage() {
           ) : (
             <div className="flex flex-col gap-4">
               {groups.map((group) => (
-                <Link key={group._id} href={`/groups/${group._id}`}>
+                <Link key={group._id} href={`/group/${group._id}`}>
                   <Card className="hover:bg-muted/30 transition-colors cursor-pointer">
                     <CardContent className="py-4">
                       <div className="flex items-center justify-between">

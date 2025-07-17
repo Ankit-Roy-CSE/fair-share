@@ -18,6 +18,7 @@ import type * as dashboard from "../dashboard.js";
 import type * as dummy from "../dummy.js";
 import type * as expenses from "../expenses.js";
 import type * as grpExpenses from "../grpExpenses.js";
+import type * as settlements from "../settlements.js";
 import type * as types from "../types.js";
 import type * as users from "../users.js";
 
@@ -35,6 +36,7 @@ declare const fullApi: ApiFromModules<{
   dummy: typeof dummy;
   expenses: typeof expenses;
   grpExpenses: typeof grpExpenses;
+  settlements: typeof settlements;
   types: typeof types;
   users: typeof users;
 }>;

@@ -28,8 +28,8 @@ export function ExpenseList({
   otherPersonId = null,
   userLookupMap = {},
 } : ExpenseListProps) {
-  const currentUserData = useDBQuery(api.users.getCurrentUser);
-  const currentUser = currentUserData?.data as Doc<"users"> | undefined;
+    const currentUserData : any = useDBQuery(api.users.getCurrentUser);
+    const currentUser : Doc<"users"> = currentUserData?.data;
   const deleteExpense = useDBMutation(api.expenses.deleteExpense);
 
   if (!expenses || !expenses.length) {

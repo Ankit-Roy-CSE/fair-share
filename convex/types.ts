@@ -1,3 +1,4 @@
+import { User } from "@clerk/nextjs/server";
 import type { Doc , Id } from  "./_generated/dataModel";
 
 type GroupMember = {
@@ -174,6 +175,41 @@ export type ShortGroup = {
     description: string | undefined;
     memberCount: number;
 }
+
+// Settlement types
+export type UserSettlement = {
+    type: "user";
+    counterpart: {
+        userId: Id<"users">;
+        name: string;
+        email: string;
+        imageUrl: string;
+    };
+    youAreOwed: number;
+    youOwe: number;
+    netBalance: number; // + => you should receive, − => you should pay
+}
+
+export type BalanceDetail = {
+    userId: Id<"users">;
+    name: string;
+    imageUrl: string | undefined;
+    youAreOwed: number;
+    youOwe: number;
+    netBalance: number;
+}
+
+export type GroupSettlement = {
+    type: "group";
+    group: {
+        id: Id<"groups">;
+        name: string;
+        description: string;
+    };
+    balances: BalanceDetail[];
+}
+
+export type SettlementData  = UserSettlement | GroupSettlement;
 
 // export above created types
 export type { GroupMember, GroupData, ExpenseData, GroupExpenseData, ContactData};
