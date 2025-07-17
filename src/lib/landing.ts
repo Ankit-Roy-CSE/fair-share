@@ -74,23 +74,23 @@ export const STEPS = [
 export const TESTIMONIALS = [
   {
     quote:
-      "Ye babu rao ka style hai! With Splitr, I finally stopped getting confused about who paid for what!",
-    name: "Babu Rao",
-    image: "/testimonials/babubhaiya.png",
+      "With FairShare, I finally stopped getting confused about who paid for what!",
+    name: "John Doe",
+    image: "/testimonials/john_doe.jpg",
     role: "Rental Property Manager",
   },
   {
     quote:
-      "Splitr's calculations are so accurate, they're even better than my scheme to double money in 25 days!",
-    name: "Raju",
-    image: "/testimonials/raju.jpg",
+      "FairShare's calculations are so accurate, I never worry about overpaying again.",
+    name: "Alice Johnson",
+    image: "/testimonials/alice_johnson.jpg",
     role: "Stock Market Expert",
   },
   {
     quote:
-      "If that I have Splitr, Raju wont get away with selling my shoes and coat! I'll add to his debt!",
-    name: "Shyam",
-    image: "/testimonials/shyam.png",
+      "I love how FairShare makes it easy to track expenses with friends.",
+    name: "Bob Smith",
+    image: "/testimonials/bob_smith.jpg",
     role: "Job Searcher",
   },
 ];
