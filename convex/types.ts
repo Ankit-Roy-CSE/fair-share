@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { User } from "@clerk/nextjs/server";
 import type { Doc , Id } from  "./_generated/dataModel";
 

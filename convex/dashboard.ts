@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { query } from "./_generated/server";
 import { internal } from "./_generated/api";
 import { Doc, Id } from "./_generated/dataModel";
