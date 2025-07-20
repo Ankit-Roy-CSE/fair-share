@@ -7,7 +7,7 @@ Streamline group expenses with ease — FairShare makes it simple to track, spli
 ## 🚀 Live Demo
 
 A live version is available at:  
-<!-- <https://fair-share-expense.vercel.app/> -->
+https://fair-share-ujgs.vercel.app/
 
 ---
 
