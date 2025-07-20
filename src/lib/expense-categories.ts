@@ -1,4 +1,3 @@
-// lib/expense-categories.js
 import {
   Coffee,
   ShoppingBag,
